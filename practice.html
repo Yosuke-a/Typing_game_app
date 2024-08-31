@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピング練習アプリ - 練習</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>タイピング練習</h1>
+        <div class="form-group mt-4">
+            <label for="text-to-type">練習するテキスト</label>
+            <textarea class="form-control" id="text-to-type" rows="5" readonly>This is a sample text to type.</textarea>
+        </div>
+        <div class="form-group mt-4">
+            <label for="user-input">あなたの入力</label>
+            <input type="text" class="form-control" id="user-input" placeholder="ここに入力...">
+        </div>
+        <button id="end-button" type="button" class="btn btn-secondary">終了</button>
+        <div id="timer" class="mt-3">タイマー: 0秒</div>
+        <a href="{{ url_for('start') }}" class="btn btn-secondary mt-3">戻る</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/practice.js') }}"></script>
+</body>
+</html>
